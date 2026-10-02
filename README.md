@@ -63,6 +63,44 @@ So yeah, OrphBoard is a custom RP2040 devboard designed in the shape of a dancin
 
 `assembly.stl` - the .stl counterpart of `assembly.step`
 
+***Firmware (this is just a small blinking LED script)***
+
+
+`/LED blinking script` - This is the folder that contains a small `blink.py` micro python code that allows an LED plugged in to gpio15 via a 220-1k ohm resistor to blink in 0.5sec increments.
+
+
+- `blink.py` - very tiny micro python code that allows an LED plugged in to gpio15 via a 220-1k ohm resistor to blink in 0.5sec increments.
+
+
+
+
+
+
+## Firmware- 
+
+There is a small micro python code file that allows an LED which is plugged in to gpio15 (GP15) of the devboard via a 220-1k ohm resistor to blink in 0.5 sec increments. 
+
+
+**Here is the code (it is small enough to put into the readme itself too!!) ->** 
+
+```
+from machine import Pin
+import time
+
+LED = Pin(15, Pin.OUT)
+
+while True:
+    LED.on()
+    time.sleep(0.5)
+
+    LED.off()
+    time.sleep(0.5)
+
+```
+
+
+
+***Note-> To change which GPIO Pin you attach the LED to you can just go ahead and change the line `LED = Pin(15, Pin.OUT)`  to `LED = Pin(Whatever GPIO Pin u are using, Pin.OUT)`***
 
 
 
